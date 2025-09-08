@@ -1,0 +1,33 @@
+Assignment 01 – Design (Pseudocode)
+
+Purpose: Prompt the user for basic information and display centered, formatted lines.
+
+START
+  Set LINE_WIDTH to 95
+
+  INPUT
+    Prompt: "Enter your first and last name:" -> full_name
+    Prompt: "What is your college major?" -> major
+    Prompt: "Identify or name a major concept or feature you want to learn using Python" -> concept
+    Prompt: "What is your dream job after completing your degree?" -> dream_job
+
+  PROCESS
+    Build sentence1: "My name is " + full_name + "."
+    Build sentence2: "My current college major is " + major + "."
+    Build sentence3: "The feature or concept I wish to learn about using Python is " + concept + "."
+    Build sentence4: "The dream job is to obtain is " + dream_job + "."
+    Build separator: "=" repeated LINE_WIDTH times
+
+  OUTPUT
+    Print separator
+    Print sentence1 centered to LINE_WIDTH
+    Print sentence2 centered to LINE_WIDTH
+    Print sentence3 centered to LINE_WIDTH
+    Print sentence4 centered to LINE_WIDTH
+    Print separator
+
+END
+
+Notes:
+- Use input() for prompts and print() for output.
+- Use f-strings for the sentences and the string .center(LINE_WIDTH) method to center them.

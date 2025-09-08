@@ -1,0 +1,10 @@
+Enter your first and last name:
+What is your college major?
+Identify or name a major concept or feature you want to learn using Python
+What is your dream job after completing your degree?
+=====================================================================================
+                             My name is Helen Williamson.                            
+             My current college major is Computer Programming & Analysis.            
+The feature or concept I wish to learn about using Python is How to create functions.
+      The dream job is to obtain is A computer programming job designing robots.     
+=====================================================================================
