@@ -7,6 +7,12 @@
 
 LINE_WIDTH = 95  # width used for centering and separator length
 
+# Helper: save output to a text file (overwrite each run so it’s up to date)
+def save_output(filepath, lines):
+    content = "\n".join(lines) + "\n"
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(content)
+
 # INPUT: gather details from the user with \n after to have input prompt on a fresh line
 full_name = input("Enter your first and last name:\n")
 major = input("What is your college major?\n")
@@ -25,12 +31,19 @@ sentence3 = (
 )
 sentence4 = f"The dream job is to obtain is {dream_job}."
 
-# OUTPUT: print a separating line before and after, and center the sentences
+# OUTPUT: build lines, print them, then save to a TXT file
 separator = "=" * LINE_WIDTH
-print(separator)
-print(sentence1.center(LINE_WIDTH))
-print(sentence2.center(LINE_WIDTH))
-print(sentence3.center(LINE_WIDTH))
-print(sentence4.center(LINE_WIDTH))
-print(separator)
+lines = [
+    separator,
+    sentence1.center(LINE_WIDTH),
+    sentence2.center(LINE_WIDTH),
+    sentence3.center(LINE_WIDTH),
+    sentence4.center(LINE_WIDTH),
+    separator,
+]
+
+for line in lines:
+    print(line)
+
+save_output("Assignment01/mcdonald_richard_Assign01_output.txt", lines)
 # END PROGRAM

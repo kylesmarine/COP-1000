@@ -1,0 +1,43 @@
+PROGRAMMER: Richard Kyle McDonald
+PROGRAM NAME: Assignment #02 – Design (Pseudocode)
+DATE: 09/08/2025
+
+BEGIN
+  SET WIDTH = 60
+
+  DISPLAY "Enter your first and last name:"
+  INPUT full_name
+
+  DISPLAY "Enter the number of lions:"
+  INPUT lions_text
+
+  DISPLAY "Enter the number of tigers:"
+  INPUT tigers_text
+
+  CONVERT lions_text TO INTEGER -> lions
+  CONVERT tigers_text TO INTEGER -> tigers
+
+  CALCULATE total = lions + tigers
+
+  IF total == 0 THEN
+      SET percent_lions = 0.0
+      SET percent_tigers = 0.0
+  ELSE
+      CALCULATE percent_lions = lions / total
+      CALCULATE percent_tigers = tigers / total
+  ENDIF
+
+  SET sep = string of '=' repeated WIDTH times
+
+  PRINT sep
+  PRINT centered("Local Zoo - Big Cats Report: By " + full_name, WIDTH)
+  PRINT sep
+  PRINT centered("Number of Lions: " + lions, WIDTH)
+  PRINT centered("Number of Tigers: " + tigers, WIDTH)
+  PRINT centered("Total Big Cats : " + total, WIDTH)
+  PRINT sep
+  PRINT centered("Lions: " + format_as_percent(percent_lions, 2), WIDTH)
+  PRINT centered("Tigers: " + format_as_percent(percent_tigers, 2), WIDTH)
+  PRINT sep
+END
+

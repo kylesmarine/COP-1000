@@ -34,6 +34,15 @@ Notes for beginners:
 # WIDTH is a variable name (the box). 85 is a number literal we store in it.
 WIDTH = 95
 
+# Where to save the AI output each run (overwrite to keep latest)
+OUTPUT_PATH = "Assignment01/mcdonald_richard_Assign01_AI_output.txt"
+
+
+def save_output(filepath, lines):
+    """Write the report lines to a text file, one per line."""
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
 
 def wrap_text(text, width):
     """Very simple word-wrapping.
@@ -100,8 +109,9 @@ def main():
     # WIDTH is the number of times we repeat it. Example: "=" * 3 -> "==="
     separator = "=" * WIDTH
 
-    # 3) Print the top separator line.
-    print(separator)
+    # Build all lines first so we can both print and save them.
+    report_lines = []
+    report_lines.append(separator)
 
     # 4) Wrap each sentence to the width, then center each wrapped line.
     #    The .center(WIDTH) call makes the text appear in the middle.
@@ -111,27 +121,34 @@ def main():
 
     sentence1 = f"My name is {name}."
     for line in wrap_text(sentence1, WIDTH):
-        print(line.center(WIDTH))
+        report_lines.append(line.center(WIDTH))
 
     # Another f-string: includes a string literal and the variable major.
     sentence2 = f"My current college major is {major}."
     for line in wrap_text(sentence2, WIDTH):
-        print(line.center(WIDTH))
+        report_lines.append(line.center(WIDTH))
 
     # A longer f-string: same idea—mix of literal text and the variable concept.
     sentence3 = (
         f"The feature or concept I wish to learn about using Python is {concept}."
     )
     for line in wrap_text(sentence3, WIDTH):
-        print(line.center(WIDTH))
+        report_lines.append(line.center(WIDTH))
 
     # One more: mixes literal text with the variable dream_job.
     sentence4 = f"The dream job is to obtain is {dream_job}."
     for line in wrap_text(sentence4, WIDTH):
-        print(line.center(WIDTH))
+        report_lines.append(line.center(WIDTH))
 
-    # 5) Print the bottom separator line.
-    print(separator)
+    # 5) Add the bottom separator line.
+    report_lines.append(separator)
+
+    # Print to screen
+    for line in report_lines:
+        print(line)
+
+    # Save to file (overwrite to keep most recent)
+    save_output(OUTPUT_PATH, report_lines)
 
 
 # This says: only run main() when this file is executed directly.
