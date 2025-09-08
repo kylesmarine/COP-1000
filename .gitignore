@@ -1,0 +1,7 @@
+########################################
+# IDE/workspace files (do not commit)
+########################################
+# Ignore this repo's VS Code workspace file
+COP-1000.code-workspace
+# Ignore any VS Code workspace files
+*.code-workspace
